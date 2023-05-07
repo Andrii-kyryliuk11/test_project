@@ -1,9 +1,12 @@
 import css from "./UserCard.module.css";
 import logo from "../../pictures/Logo.svg";
 import image from "../../pictures/picture2 1.svg";
-import av from "../../pictures/Hansel.png";
+import { useDispatch } from "react-redux";
+import { fetchOneUser, followUserToggle } from "../../redux/operations";
 
-export default function UserCard() {
+export default function UserCard({ user }) {
+  const dispatch = useDispatch();
+  const isFollowed = user.isFollowed;
   return (
     <div className={css.card}>
       <div className={css.card_top}>
@@ -11,20 +14,29 @@ export default function UserCard() {
         <img src={image} alt="" className={css.image} />
         <div className={css.card_top_border}>
           <div className={css.card_top_elipse}>
-            <img
-              src="https://img.icons8.com/?size=512&id=81139&format=png"
-              alt=""
-              className={css.avatar}
-            />
+            <img src={user.avatar} alt="" className={css.avatar} />
           </div>
         </div>
       </div>
       <div className={css.card_bottom}>
         <div className={css.stats}>
-          <span>777 tweets</span>
-          <span>100 followers</span>
+          <span>{user.user}</span>
+          <span>{user.tweets} tweets</span>
+          <span>
+            {Math.round(user.followers).toString().split("")} followers
+          </span>
         </div>
-        <button type="button">Follow</button>
+        <button
+          type="button"
+          className={isFollowed ? css.followed : css.normal}
+          onClick={() => {
+            dispatch(followUserToggle(user)).then(() => {
+              dispatch(fetchOneUser(user.id));
+            });
+          }}
+        >
+          {isFollowed ? "following" : "follow"}
+        </button>
       </div>
     </div>
   );

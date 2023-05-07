@@ -1,0 +1,58 @@
+.homePage {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4d4545;
+}
+
+.buttonBack {
+  margin-left: auto;
+  margin-right: auto;
+  width: 196px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  gap: 6px;
+  background: #6e6969;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10.3108px;
+  border: none;
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.title {
+  font-size: 2rem;
+  font-variant: small-caps;
+  background: conic-gradient(
+    #dff2ae 0 25%,
+    #ff90f4 25% 50%,
+    #feefe7 50% 75%,
+    #ffde2b 75% 100%
+  );
+  background-size: 200% 200%;
+  animation: animate 4.3s ease-in-out infinite;
+  color: transparent;
+  background-clip: text;
+}
+
+@keyframes animate {
+  25% {
+    background-position: 0 100%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
