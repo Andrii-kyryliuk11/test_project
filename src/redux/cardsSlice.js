@@ -7,7 +7,11 @@ const initialState = {
 export const cardsSlice = createSlice({
   name: "cards",
   initialState,
-  reducers: {},
+  reducers: {
+    filteredValue(state, action) {
+      state.data = action.payload;
+    },
+  },
   extraReducers: {
     [fetchUsers.fulfilled]: (state, action) => {
       state.data = [...state.data, ...action.payload];
@@ -17,3 +21,5 @@ export const cardsSlice = createSlice({
     },
   },
 });
+
+export const { filteredValue } = cardsSlice.actions;
