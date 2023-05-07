@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { increasePage } from "../../redux/pageSlice";
 import { fetchMoreUsers } from "../../redux/operations";
 import css from "./LoadMoreButton.module.css";
+import { Link, NavLink } from "react-router-dom";
 
 export default function LoadMoreButton() {
   const page = useSelector((state) => state.page);
@@ -17,7 +18,7 @@ export default function LoadMoreButton() {
           dispatch(fetchMoreUsers(page));
         }}
       >
-        Load more
+        Load More
       </button>
     )
   );

@@ -4,7 +4,9 @@ export default function HomeView() {
   return (
     <div className={css.homePage}>
       <div className={css.title}>Welcome to TweetBox</div>
-      <NavLink to="tweets" className={css.buttonBack}></NavLink>
+      <NavLink to="tweets" className={css.buttonBack}>
+        show tweets!
+      </NavLink>
     </div>
   );
 }

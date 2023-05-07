@@ -1,13 +1,7 @@
-import { NavLink } from "react-router-dom";
-import CardList from "../components/CardList/CardList";
+import TweetView from "../components/TweetView/TweetView";
 
-export default function TweetView() {
+export default function Tweets() {
   return (
-    <>
-      <CardList />
-      <NavLink to="/">
-        <button type="button">back</button>
-      </NavLink>
-    </>
+   <TweetView />
   );
 }

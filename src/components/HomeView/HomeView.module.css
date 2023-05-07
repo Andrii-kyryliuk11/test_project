@@ -1,13 +1,13 @@
 .homePage {
   width: 100vw;
   height: 100vh;
-  background-color: #4d4545;
 }
 
 .buttonBack {
   margin-left: auto;
   margin-right: auto;
-  width: 196px;
+  width: 220px;
+  margin-top: 270px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -24,11 +24,20 @@
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
-  color: #373737;
+  color: #383535;
+  text-decoration: none;
+}
+
+.buttonBack:hover {
+  scale: 1.1;
+}
+.buttonBack:active {
+  background: #dff2ae;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 80px;
+  padding-top: 200px;
   font-variant: small-caps;
   background: conic-gradient(
     #dff2ae 0 25%,
@@ -40,6 +49,7 @@
   animation: animate 4.3s ease-in-out infinite;
   color: transparent;
   background-clip: text;
+  text-align: center;
 }
 
 @keyframes animate {
@@ -55,4 +65,7 @@
   100% {
     background-position: 0 0;
   }
+}
+
+nawLink {
 }
