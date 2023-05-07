@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = 2;
+const initialState = 1;
 
 export const pageSlice = createSlice({
   name: "page",
   initialState,
   reducers: {
-    increasePage(state, action) {
-      return (state = state + 1);
+    increasePage(state) {
+      return (state += 1);
     },
   },
 });

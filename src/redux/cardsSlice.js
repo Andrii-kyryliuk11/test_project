@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAllUsers, fetchMoreUsers, fetchOneUser } from "./operations";
+import { fetchOneUser, fetchUsers } from "./operations";
 const initialState = {
   data: [],
 };
@@ -9,10 +9,7 @@ export const cardsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchAllUsers.fulfilled]: (state, action) => {
-      state.data = action.payload;
-    },
-    [fetchMoreUsers.fulfilled]: (state, action) => {
+    [fetchUsers.fulfilled]: (state, action) => {
       state.data = [...state.data, ...action.payload];
     },
     [fetchOneUser.fulfilled]: (state, action) => {

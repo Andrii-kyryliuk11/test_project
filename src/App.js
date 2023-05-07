@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import CardList from "./components/CardList/CardList";
 import HomePage from "./pages/HomePage";
 import TweetPage from "./pages/TweetPage";
 

@@ -2,19 +2,14 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://6456a2fa2e41ccf16921f779.mockapi.io";
 
-export async function getTweets() {
-  const data = await axios.get("/users?l=4&p=1");
 
-  return data;
-}
-
-export async function getOneUser(id) {
+export async function getOneTweet(id) {
   const data = await axios.get(`/users/${id}`);
 
   return data;
 }
 
-export async function loadMoreTweets(page) {
+export async function loadTweets(page) {
   const data = await axios.get(`/users?l=4&p=${page}`);
 
   return data;
