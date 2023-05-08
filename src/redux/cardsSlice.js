@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchOneUser, fetchUsers } from "./operations";
+
 const initialState = {
   data: [],
 };
