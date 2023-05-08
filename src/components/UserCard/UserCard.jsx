@@ -12,11 +12,11 @@ export default function UserCard({ user }) {
   return (
     <div className={css.card}>
       <div className={css.card_top}>
-        <img src={logo} alt="" className={css.logoGoIt} />
-        <img src={image} alt="" className={css.image} />
+        <img src={logo} alt="goit logo" className={css.logoGoIt} />
+        <img src={image} alt="user card background" className={css.image} />
         <div className={css.card_top_border}>
           <div className={css.card_top_elipse}>
-            <img src={user.avatar} alt="" className={css.avatar} />
+            <img src={user.avatar} alt="user avatar" className={css.avatar} />
           </div>
         </div>
       </div>
