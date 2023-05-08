@@ -10,7 +10,7 @@ export const fetchOneUser = createAsyncThunk("users/fetchOne", async (id) => {
   }
 });
 
-export const fetchUsers = createAsyncThunk("users/fetchMore", async (page) => {
+export const fetchUsers = createAsyncThunk("users/fetchUsers", async (page) => {
   try {
     const response = await loadTweets(page);
     return response.data;

@@ -1,9 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./Filter.module.css";
-import { filteredValue } from "../../redux/cardsSlice";
+import {
+  showAllUsers,
+  showFollowedUsers,
+  showUnfollowedUsers,
+} from "../../redux/filterSlice";
+import { selectFilter } from "../../redux/selectors";
 
-export default function Filter() {
-  const users = useSelector((state) => state.users.data);
+export function Filter() {
   const dispatch = useDispatch();
 
   return (
@@ -12,23 +16,53 @@ export default function Filter() {
         Filter
       </button>
       <div className={css.contentBox}>
-        <button type="button" className={css.content}>
+        <button
+          type="button"
+          className={css.content}
+          onClick={() => {
+            dispatch(showAllUsers());
+          }}
+        >
           show all
         </button>
         <button
           type="button"
           className={css.content}
           onClick={() => {
-            const filteredUusers = users.filter((user) => user.isFollowed);
-            dispatch(filteredValue(filteredUusers));
+            dispatch(showUnfollowedUsers());
           }}
         >
           follow
         </button>
-        <button type="button" className={css.content}>
+        <button
+          type="button"
+          className={css.content}
+          onClick={() => {
+            dispatch(showFollowedUsers());
+          }}
+        >
           followings
         </button>
       </div>
     </div>
   );
+}
+
+export function Filtration(usersData) {
+  const filterValue = useSelector(selectFilter);
+  let filteredUsers = [];
+  usersData.forEach((user) => {
+    if (filterValue === null) {
+      filteredUsers = [...usersData];
+    }
+    switch (user.isFollowed) {
+      case filterValue:
+        filteredUsers.push(user);
+        break;
+
+      default:
+        break;
+    }
+  });
+  return filteredUsers;
 }

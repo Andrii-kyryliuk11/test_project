@@ -3,10 +3,12 @@ import logo from "../../pictures/Logo.svg";
 import image from "../../pictures/picture2 1.svg";
 import { useDispatch } from "react-redux";
 import { fetchOneUser, followUserToggle } from "../../redux/operations";
+import { toast } from "react-toastify";
 
 export default function UserCard({ user }) {
   const dispatch = useDispatch();
   const isFollowed = user.isFollowed;
+
   return (
     <div className={css.card}>
       <div className={css.card_top}>
@@ -23,7 +25,7 @@ export default function UserCard({ user }) {
           <span>{user.user}</span>
           <span>{user.tweets} tweets</span>
           <span>
-            {Math.round(user.followers).toString().split("")} followers
+            {Math.round(user.followers).toLocaleString("en-US")} followers
           </span>
         </div>
         <button
@@ -31,6 +33,9 @@ export default function UserCard({ user }) {
           className={isFollowed ? css.followed : css.normal}
           onClick={() => {
             dispatch(followUserToggle(user)).then(() => {
+              toast(isFollowed ? "User unfollowed" : "User followed", {
+                className: css.toastrNotif,
+              });
               dispatch(fetchOneUser(user.id));
             });
           }}

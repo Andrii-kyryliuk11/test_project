@@ -8,8 +8,8 @@ export const cardsSlice = createSlice({
   name: "cards",
   initialState,
   reducers: {
-    filteredValue(state, action) {
-      state.data = action.payload;
+    cleareData(state) {
+      state.data = [];
     },
   },
   extraReducers: {
@@ -22,4 +22,4 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const { filteredValue } = cardsSlice.actions;
+export const { cleareData } = cardsSlice.actions;

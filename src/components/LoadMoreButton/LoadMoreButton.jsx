@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { increasePage } from "../../redux/pageSlice";
 import css from "./LoadMoreButton.module.css";
+import { selectPage } from "../../redux/selectors";
 
 export default function LoadMoreButton() {
-  const page = useSelector((state) => state.page);
+  const page = useSelector(selectPage);
   const dispatch = useDispatch();
 
   return (

@@ -113,3 +113,14 @@ span {
 .card_bottom > button:hover {
   scale: 1.1;
 }
+.toastrNotif {
+  --toastify-toast-background: black;
+  --toastify-color-light: #5cd3a8;
+  --toastify-text-color-light: #373737;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 60px;
+}

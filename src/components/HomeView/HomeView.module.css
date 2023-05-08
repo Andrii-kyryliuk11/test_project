@@ -1,13 +1,8 @@
-.homePage {
-  width: 100vw;
-  height: 100vh;
-}
-
 .buttonBack {
   margin-left: auto;
   margin-right: auto;
   width: 220px;
-  margin-top: 270px;
+  margin-top: 170px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,7 +32,7 @@
 
 .title {
   font-size: 80px;
-  padding-top: 200px;
+  padding-top: 150px;
   font-variant: small-caps;
   background: conic-gradient(
     #dff2ae 0 25%,
@@ -66,4 +61,3 @@
     background-position: 0 0;
   }
 }
-

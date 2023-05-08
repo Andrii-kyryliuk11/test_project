@@ -9,7 +9,10 @@ export const pageSlice = createSlice({
     increasePage(state) {
       return (state += 1);
     },
+    resetPage(state) {
+      return (state = 1);
+    },
   },
 });
 
-export const { increasePage } = pageSlice.actions;
+export const { increasePage, resetPage } = pageSlice.actions;

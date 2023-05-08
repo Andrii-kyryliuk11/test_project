@@ -4,21 +4,22 @@ import { fetchUsers } from "../../redux/operations";
 import LoadMoreButton from "../LoadMoreButton/LoadMoreButton";
 import css from "./CardList.module.css";
 import UserCard from "../UserCard/UserCard";
-import { filteredValue } from "../../redux/cardsSlice";
+import { Filtration } from "../Filter/Filter";
+import { selectPage, selectUsersData } from "../../redux/selectors";
+
 
 export default function CardList() {
   const dispatch = useDispatch();
-  const usersData = useSelector((store) => store.users.data);
-  const page = useSelector((state) => state.page);
+  const usersData = useSelector(selectUsersData);
+  const page = useSelector(selectPage);
   useEffect(() => {
     dispatch(fetchUsers(page));
-    dispatch(filteredValue());
   }, [dispatch, page]);
 
   return (
     <>
       <div className={css.userList}>
-        {usersData.map((user) => {
+        {Filtration(usersData).map((user) => {
           return (
             <div key={user.id}>
               <UserCard user={user} />

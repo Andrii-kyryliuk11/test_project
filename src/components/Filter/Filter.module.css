@@ -20,6 +20,11 @@
   cursor: pointer;
 }
 
+.dropdown:active,
+.content:active {
+  background: #dff2ae;
+}
+
 .contentBox {
   display: none;
   position: absolute;
@@ -59,6 +64,7 @@
   text-decoration: none;
   transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .content:nth-child(2) {
   border-bottom: 1px solid #4d4848;
   border-top: 1px solid #4d4848;
